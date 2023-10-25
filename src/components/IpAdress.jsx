@@ -12,7 +12,9 @@ function IpAdress() {
     setStatus("loading");
     axios
       .get(
-        "https://geo.ipify.org/api/v2/country?apiKey=at_l9rDHDyitisbDGLUNf0fMc9O7hg7N"
+        `https://geo.ipify.org/api/v2/country?apiKey=${
+          import.meta.env.VITE_API_KEY
+        }`
       )
       .then((response) => {
         setIpAddress(response.data);
